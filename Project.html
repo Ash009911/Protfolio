@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Ashutosh</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="window-controls">
+            <span class="red" id="closeBtn"></span>
+            <span class="yellow" id="minimizeBtn"></span>
+            <span class="green" id="Shirnkbtn"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="Profile.html">Home</a></li>
+            <li><a href="Portfolio.html">About me</a></li>
+            <li><a href="Project.html">Projects</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="projects-container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="Profile pic.png" alt="Mentor-Connect Screenshot">
+                <h3>Mentor-Connect</h3>
+                <p>A platform that connects mentors and mentees with structured guidance.</p>
+            </div>
+            <div class="project-card">
+                <img src="Profile pic.png" alt="Mentor-Connect Screenshot">
+                <h3>Chat-App</h3>
+                <p>A platform that lets you chat with your friends</p>
+            </div>
+            <div class="project-card">
+                <img src="Profile pic.png" alt="Mentor-Connect Screenshot">
+                <h3>Credit-Wallet</h3>
+                <p>A platform that helps you use your pre-build credit limit anytime you want</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="github-link">
+        <h3>Check out all these banger projects on my GitHub</h3>
+        <a href="https://github.com/Ash009911?tab=repositories" target="_blank">Visit My GitHub</a>
+    </div>
+
+    <div class="particles"></div>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainer = document.querySelector(".particles");
+        for (let i = 0; i < 30; i++) {
+            let particle = document.createElement("div");
+            particle.classList.add("particle");
+            particle.style.left = Math.random() * 100 + "vw";
+            particle.style.top = Math.random() * 100 + "vh";
+            particle.style.animationDelay = Math.random() * 5 + "s";
+            particle.style.animationDuration = Math.random() * 5 + 3 + "s";
+            particlesContainer.appendChild(particle);
+        }
+    });
+
+    document.getElementById("closeBtn").addEventListener("click", function () {
+        let confirmClose = confirm("Are you sure you want to exit?");
+        if (confirmClose) {
+            window.open("about:blank", "_self"); // Current tab ko blank page pe redirect karega.
+            window.close(); // Kuch cases me ye bhi kaam karega.
+        }
+    });
+
+    document.getElementById("minimizeBtn").addEventListener("click", function () {
+        document.body.classList.add("hide");  // Screen invisible ho jayegi
+    });
+
+    document.getElementById("Shirnkbtn").addEventListener("click", function () {
+        document.body.classList.toggle("shrunk");  // Page small hoga ya wapas normal
+    });
+</script>
+
+</html>
